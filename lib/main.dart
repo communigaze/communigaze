@@ -20,8 +20,8 @@ import './pages/home_page.dart';
 void main() {
   runApp(
     SplashPage(
-      key: UniqueKey(), 
-      onInitializationComplete: (){
+      key: UniqueKey(),
+      onInitializationComplete: () {
         runApp(
           MainApp(),
         );
@@ -31,7 +31,6 @@ void main() {
 }
 
 class MainApp extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -41,7 +40,7 @@ class MainApp extends StatelessWidget {
             return AuthenticationProvider();
           },
         )
-      ], 
+      ],
       child: MaterialApp(
         title: 'Communigaze',
         theme: ThemeData(
@@ -51,6 +50,7 @@ class MainApp extends StatelessWidget {
             backgroundColor: Color.fromRGBO(30, 29, 37, 1.0),
           ),
         ),
+        debugShowCheckedModeBanner: false,
         navigatorKey: NavigationService.navigatorKey,
         initialRoute: '/login',
         routes: {
@@ -62,4 +62,3 @@ class MainApp extends StatelessWidget {
     );
   }
 }
-
